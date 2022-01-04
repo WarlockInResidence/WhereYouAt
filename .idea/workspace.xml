@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a1b0592-1aa6-4e69-a2e8-6fc48becf801" name="Changes" comment="initial backend setup&#10;docker-compose working&#10;flyway working">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/roadtowizardry/WhereYouAt/ContainerController.java" afterDir="false" />
+    <list default="true" id="0a1b0592-1aa6-4e69-a2e8-6fc48becf801" name="Changes" comment="Working flyway and docker">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/roadtowizardry/WhereYouAt/controller/ContainerController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.3.2/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.3.2/checksums/checksums.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.3.2/dependencies-accessors/dependencies-accessors.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.3.2/dependencies-accessors/dependencies-accessors.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.3.2/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.3.2/executionHistory/executionHistory.bin" afterDir="false" />
@@ -14,12 +14,18 @@
       <change beforePath="$PROJECT_DIR$/.gradle/7.3.2/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.3.2/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.3.2/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.3.2/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/73bad76a-67f6-4397-b1bd-c69ecdce0500.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/73bad76a-67f6-4397-b1bd-c69ecdce0500.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/73bad76a-67f6-4397-b1bd-c69ecdce0500/storage_v2/_src_/database/user.y-s2AA/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/73bad76a-67f6-4397-b1bd-c69ecdce0500/storage_v2/_src_/database/user.y-s2AA/schema/public.abK9xQ.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/roadtowizardry/WhereYouAt/Container.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/roadtowizardry/WhereYouAt/ContainerController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/roadtowizardry/WhereYouAt/ContainerRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/db/migration/V1__initital_schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/db/migration/V1__initital_schema.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/roadtowizardry/WhereYouAt/Container.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/roadtowizardry/WhereYouAt/model/Containers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/roadtowizardry/WhereYouAt/ContainerController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/roadtowizardry/WhereYouAt/ContainerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/roadtowizardry/WhereYouAt/dao/ContainerRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/db/migration/V1__initital_schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/migration/V1__initital_schema.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,10 +57,21 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="FlywayMigrationScript" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="FlywayMigrationScript" />
       </list>
+    </option>
+  </component>
+  <component name="Git.Merge.Settings">
+    <option name="BRANCH" value="master" />
+  </component>
+  <component name="Git.Rebase.Settings">
+    <option name="NEW_BASE" value="initial-backend-setup" />
+    <option name="OPTIONS">
+      <set>
+        <option value="INTERACTIVE" />
+      </set>
     </option>
   </component>
   <component name="Git.Settings">
@@ -64,6 +81,14 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="JpbToolWindowState">
     <option name="myId2FirstActivated">
@@ -93,6 +118,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect" value="PostgreSQL" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RunManager">
@@ -143,6 +169,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial backend setup&#10;docker-compose working&#10;flyway working" />
-    <option name="LAST_COMMIT_MESSAGE" value="initial backend setup&#10;docker-compose working&#10;flyway working" />
+    <MESSAGE value="Working flyway and docker" />
+    <option name="LAST_COMMIT_MESSAGE" value="Working flyway and docker" />
   </component>
 </project>

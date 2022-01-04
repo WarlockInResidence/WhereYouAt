@@ -1,16 +1,20 @@
-package com.roadtowizardry.WhereYouAt;
+package com.roadtowizardry.WhereYouAt.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "containers")
-public class Container {
+public class Containers {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
-
     private String name;
     private String type;
     private String room;
@@ -19,11 +23,14 @@ public class Container {
     private float width;
     private float length;
 
-    public Container() {
 
+    @OneToMany(mappedBy = "containers", cascade = CascadeType.REMOVE, fetch = FetchType.LAZY, orphanRemoval = true)
+    private Set <Item> items = new HashSet<>();
+
+    public Containers() {
     }
 
-    public Container(String name, String type, String room, String description, float height, float width, float length) {
+    public Containers(String name, String type, String room, String description, float height, float width, float length, Set<Item> items) {
         this.name = name;
         this.type = type;
         this.room = room;
@@ -31,6 +38,7 @@ public class Container {
         this.height = height;
         this.width = width;
         this.length = length;
+        this.items = items;
     }
 
     public long getId() {
@@ -95,5 +103,13 @@ public class Container {
 
     public void setLength(float length) {
         this.length = length;
+    }
+
+    public Set<Item> getItems() {
+        return items;
+    }
+
+    public void setItems(Set<Item> items) {
+        this.items = items;
     }
 }

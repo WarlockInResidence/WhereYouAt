@@ -1,0 +1,14 @@
+Index: src/main/java/com/roadtowizardry/WhereYouAt/ContainerController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.roadtowizardry.WhereYouAt;\n\npublic class ContainerController {\n}\n
+===================================================================
+diff --git a/src/main/java/com/roadtowizardry/WhereYouAt/ContainerController.java b/src/main/java/com/roadtowizardry/WhereYouAt/ContainerController.java
+--- a/src/main/java/com/roadtowizardry/WhereYouAt/ContainerController.java	
++++ b/src/main/java/com/roadtowizardry/WhereYouAt/ContainerController.java	
+@@ -1,4 +1,5 @@
+ package com.roadtowizardry.WhereYouAt;
+ 
+ public class ContainerController {
++
+ }
