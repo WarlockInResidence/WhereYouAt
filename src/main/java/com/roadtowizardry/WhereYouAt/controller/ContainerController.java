@@ -45,8 +45,9 @@ public class ContainerController {
         return this.containerRepository.findAll();
     }
 
-    public ItemRepository getItemRepository() {
+    public ItemRepository itemRepository() {
         return itemRepository;
     }
+
 }
 

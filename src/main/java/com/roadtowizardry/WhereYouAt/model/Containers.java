@@ -15,29 +15,23 @@ public class Containers {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
-    private String name;
+    //    private String name;
     private String type;
-    private String room;
-    private String description;
-    private float height;
-    private float width;
-    private float length;
+//    private String room;
+//    private String description;
+//    private float height;
+//    private float width;
+//    private float length;
 
-
+    @JsonManagedReference
     @OneToMany(mappedBy = "containers", cascade = CascadeType.REMOVE, fetch = FetchType.LAZY, orphanRemoval = true)
-    private Set <Item> items = new HashSet<>();
+    private Set<Item> items;
 
     public Containers() {
     }
 
-    public Containers(String name, String type, String room, String description, float height, float width, float length, Set<Item> items) {
-        this.name = name;
+    public Containers(String type, Set<Item> items) {
         this.type = type;
-        this.room = room;
-        this.description = description;
-        this.height = height;
-        this.width = width;
-        this.length = length;
         this.items = items;
     }
 
@@ -49,60 +43,12 @@ public class Containers {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public String getType() {
         return type;
     }
 
     public void setType(String type) {
         this.type = type;
-    }
-
-    public String getRoom() {
-        return room;
-    }
-
-    public void setRoom(String room) {
-        this.room = room;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public float getHeight() {
-        return height;
-    }
-
-    public void setHeight(float height) {
-        this.height = height;
-    }
-
-    public float getWidth() {
-        return width;
-    }
-
-    public void setWidth(float width) {
-        this.width = width;
-    }
-
-    public float getLength() {
-        return length;
-    }
-
-    public void setLength(float length) {
-        this.length = length;
     }
 
     public Set<Item> getItems() {

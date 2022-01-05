@@ -7,5 +7,5 @@ import org.springframework.data.repository.CrudRepository;
 
 
 public interface ItemRepository extends CrudRepository<Item, Long> {
-    Page<Item> findByContainerId(Long containerId, Pageable pageable);
+    Page<Item> findByContainersId(Long containerId, Pageable pageable);
 }

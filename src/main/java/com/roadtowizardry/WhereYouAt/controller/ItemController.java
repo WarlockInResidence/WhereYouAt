@@ -14,7 +14,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import java.net.URI;
 import java.util.Optional;
 
-@RestController
+@RestController("MainItemController")
 @RequestMapping("items")
 public class ItemController {
     private final ItemRepository itemRepository;
@@ -30,12 +30,12 @@ public class ItemController {
     // Create Team - Post
     @PostMapping
     public ResponseEntity<Item> create(@RequestBody Item item) {
-        Optional<Containers> optionalContainer = containerRepository.findById(item.getContainer().getId());
-        if (!optionalContainer.isPresent()){
+        Optional<Containers> optionalContainer = containerRepository.findById(item.getContainers().getId());
+        if (!optionalContainer.isPresent()) {
             return ResponseEntity.unprocessableEntity().build();
         }
 
-        item.setContainer(optionalContainer.get());
+        item.setContainers(optionalContainer.get());
 
         Item savedItem = itemRepository.save(item);
         URI itemName = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
@@ -56,9 +56,9 @@ public class ItemController {
         return this.itemRepository.findAll();
     }
 
-    @GetMapping("containers/{containerId}")
-    public ResponseEntity<Page<Item>> getByContainerId(@PathVariable Long containerId, Pageable pageable){
-        return ResponseEntity.ok(itemRepository.findByContainerId(containerId, pageable));
+    @GetMapping("containers/{id}")
+    public ResponseEntity<Page<Item>> getByContainerId(@PathVariable Long id, Pageable pageable){
+        return ResponseEntity.ok(itemRepository.findByContainersId(id, pageable));
     }
 
 }

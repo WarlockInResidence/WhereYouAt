@@ -1,6 +1,6 @@
 package com.roadtowizardry.WhereYouAt.model;
 
-import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import javax.persistence.*;
 
@@ -12,32 +12,24 @@ public class Item {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    private String category; // clothing, tools [add later, not needed for closet version]
+    //    private String category; // clothing, tools [add later, not needed for closet version]
     private String type; // shirt, pants
-    private String occasion; // mil, dress, fancy, workout
-    private String length; // long sleeve, short
-    private String color; // red, blue, yellow
+//    private String occasion; // mil, dress, fancy, workout
+//    private String length; // long sleeve, short
+//    private String color; // red, blue, yellow
 
 
+    @JsonBackReference
     @ManyToOne(cascade = CascadeType.REMOVE, fetch = FetchType.LAZY)
-    @JoinColumn(name = "containers_id", nullable = false)
-    @JsonIdentityInfo(generator= ObjectIdGenerators.PropertyGenerator.class, property="id")
-    @JsonIdentityReference(alwaysAsId=true)
-    @JsonProperty("containers_id")
+    @JoinColumn(name = "container_id", nullable = false)
     private Containers containers;
 
-
-    public Item(String category, String type, String occasion, String length, String color, Containers containers) {
-        this.category = category;
-        this.type = type;
-        this.occasion = occasion;
-        this.length = length;
-        this.color = color;
-        this.containers = containers;
+    public Item() {
     }
 
-    public Item() {
-
+    public Item(String type, Containers containers) {
+        this.type = type;
+        this.containers = containers;
     }
 
     public long getId() {
@@ -48,14 +40,6 @@ public class Item {
         this.id = id;
     }
 
-    public String getCategory() {
-        return category;
-    }
-
-    public void setCategory(String category) {
-        this.category = category;
-    }
-
     public String getType() {
         return type;
     }
@@ -64,49 +48,12 @@ public class Item {
         this.type = type;
     }
 
-    public String getOccasion() {
-        return occasion;
-    }
-
-    public void setOccasion(String occasion) {
-        this.occasion = occasion;
-    }
-
-    public String getLength() {
-        return length;
-    }
-
-    public void setLength(String length) {
-        this.length = length;
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
-    }
-
-    public Containers getContainer() {
+    public Containers getContainers() {
         return containers;
     }
 
-    public void setContainer(Containers containers) {
+    public void setContainers(Containers containers) {
         this.containers = containers;
-    }
-
-    @Override
-    public String toString() {
-        return "Item{" +
-                "id=" + id +
-                ", category='" + category + '\'' +
-                ", type='" + type + '\'' +
-                ", occasion='" + occasion + '\'' +
-                ", length='" + length + '\'' +
-                ", color='" + color + '\'' +
-                ", containers=" + containers +
-                '}';
     }
 }
 
