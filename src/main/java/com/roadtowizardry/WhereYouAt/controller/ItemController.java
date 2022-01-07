@@ -3,7 +3,7 @@ package com.roadtowizardry.WhereYouAt.controller;
 import com.roadtowizardry.WhereYouAt.dao.ContainerRepository;
 import com.roadtowizardry.WhereYouAt.dao.ItemRepository;
 import com.roadtowizardry.WhereYouAt.model.Containers;
-import com.roadtowizardry.WhereYouAt.model.Item;
+import com.roadtowizardry.WhereYouAt.model.Items;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -14,7 +14,8 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import java.net.URI;
 import java.util.Optional;
 
-@RestController("MainItemController")
+//@RestController("MainItemController")
+@RestController
 @RequestMapping("items")
 public class ItemController {
     private final ItemRepository itemRepository;
@@ -29,19 +30,19 @@ public class ItemController {
 
     // Create Team - Post
     @PostMapping
-    public ResponseEntity<Item> create(@RequestBody Item item) {
-        Optional<Containers> optionalContainer = containerRepository.findById(item.getContainers().getId());
+    public ResponseEntity<Items> create(@RequestBody Items items) {
+        Optional<Containers> optionalContainer = containerRepository.findById(items.getContainers().getId());
         if (!optionalContainer.isPresent()) {
             return ResponseEntity.unprocessableEntity().build();
         }
 
-        item.setContainers(optionalContainer.get());
+        items.setContainers(optionalContainer.get());
 
-        Item savedItem = itemRepository.save(item);
+        Items savedItems = itemRepository.save(items);
         URI itemName = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
-                .buildAndExpand(savedItem.getId()).toUri();
+                .buildAndExpand(savedItems.getId()).toUri();
 
-        return ResponseEntity.created(itemName).body(savedItem);
+        return ResponseEntity.created(itemName).body(savedItems);
     }
 
     // Read Team - Get
@@ -52,12 +53,12 @@ public class ItemController {
 
     // List - Get all the items
     @GetMapping
-    public Iterable<Item> getAll() {
+    public Iterable<Items> getAll() {
         return this.itemRepository.findAll();
     }
 
     @GetMapping("containers/{id}")
-    public ResponseEntity<Page<Item>> getByContainerId(@PathVariable Long id, Pageable pageable){
+    public ResponseEntity<Page<Items>> getByContainerId(@PathVariable Long id, Pageable pageable){
         return ResponseEntity.ok(itemRepository.findByContainersId(id, pageable));
     }
 

@@ -1,6 +1,5 @@
 package com.roadtowizardry.WhereYouAt.model;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import org.hibernate.annotations.Type;
@@ -9,50 +8,34 @@ import javax.persistence.*;
 import java.util.Set;
 
 @Entity
-@Table(name = "containers")
-public class Containers {
+@Table(name = "rooms")
+public class Rooms {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
-    private String type;
+    private String name;
     private String description;
     private float height;
     private float width;
     private float length;
 
+    @JsonIgnore
     @JsonManagedReference
-    @OneToMany(mappedBy = "containers", cascade = CascadeType.REMOVE, fetch = FetchType.LAZY, orphanRemoval = true)
-    private Set<Items> items;
+//    @OneToMany(cascade = CascadeType.REMOVE, fetch = FetchType.LAZY, orphanRemoval = true)
+    @OneToMany(mappedBy = "rooms", cascade = CascadeType.REMOVE, fetch = FetchType.LAZY, orphanRemoval = true)
+    private Set<Containers> containers;
 
-//    @ManyToOne(cascade = CascadeType.REMOVE, fetch = FetchType.LAZY)
-//    @JoinColumn(name = "room_id", nullable = false)
-//    private Rooms room;
-
-    @JsonBackReference
-    @ManyToOne(cascade = CascadeType.REMOVE, fetch = FetchType.LAZY)
-    @JoinColumn(name = "rooms_id", nullable = false)
-    private Rooms rooms;
-
-    public Rooms getRooms() {
-        return rooms;
-    }
-
-    public void setRooms(Rooms rooms) {
-        this.rooms = rooms;
-    }
-
-    public Containers(String type, String description, float height, float width, float length, Set<Items> items, Rooms rooms) {
-        this.type = type;
+    public Rooms(String name, String description, float height, float width, float length, Set<Containers> containers) {
+        this.name = name;
         this.description = description;
         this.height = height;
         this.width = width;
         this.length = length;
-        this.items = items;
-        this.rooms = rooms;
+        this.containers = containers;
     }
 
-    public Containers() {
+    public Rooms() {
 
     }
 
@@ -64,12 +47,12 @@ public class Containers {
         this.id = id;
     }
 
-    public String getType() {
-        return type;
+    public String getName() {
+        return name;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getDescription() {
@@ -104,12 +87,11 @@ public class Containers {
         this.length = length;
     }
 
-    public Set<Items> getItems() {
-        return items;
+    public Set<Containers> getContainers() {
+        return containers;
     }
 
-    public void setItems(Set<Items> items) {
-        this.items = items;
+    public void setContainers(Set<Containers> containers) {
+        this.containers = containers;
     }
-
 }

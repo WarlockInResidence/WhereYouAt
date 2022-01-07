@@ -5,27 +5,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0a1b0592-1aa6-4e69-a2e8-6fc48becf801" name="Changes" comment="Working flyway and docker">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/roadtowizardry/WhereYouAt/controller/ContainerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.3.2/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.3.2/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.3.2/dependencies-accessors/dependencies-accessors.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.3.2/dependencies-accessors/dependencies-accessors.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.3.2/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.3.2/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.3.2/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.3.2/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.3.2/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.3.2/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.3.2/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.3.2/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.3.2/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.3.2/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/73bad76a-67f6-4397-b1bd-c69ecdce0500.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/73bad76a-67f6-4397-b1bd-c69ecdce0500.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/73bad76a-67f6-4397-b1bd-c69ecdce0500/storage_v2/_src_/database/user.y-s2AA/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/73bad76a-67f6-4397-b1bd-c69ecdce0500/storage_v2/_src_/database/user.y-s2AA/schema/public.abK9xQ.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/73bad76a-67f6-4397-b1bd-c69ecdce0500.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/73bad76a-67f6-4397-b1bd-c69ecdce0500/storage_v2/_src_/database/user.y-s2AA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/73bad76a-67f6-4397-b1bd-c69ecdce0500/storage_v2/_src_/database/user.y-s2AA/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/73bad76a-67f6-4397-b1bd-c69ecdce0500/storage_v2/_src_/database/user.y-s2AA/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/73bad76a-67f6-4397-b1bd-c69ecdce0500/storage_v2/_src_/database/user.y-s2AA/schema/public.abK9xQ.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/roadtowizardry/WhereYouAt/Container.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/roadtowizardry/WhereYouAt/ContainerController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/roadtowizardry/WhereYouAt/ContainerRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/roadtowizardry/WhereYouAt/controller/ItemController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/roadtowizardry/WhereYouAt/controller/ItemController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/roadtowizardry/WhereYouAt/dao/ItemRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/roadtowizardry/WhereYouAt/dao/ItemRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/roadtowizardry/WhereYouAt/model/Containers.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/roadtowizardry/WhereYouAt/model/Containers.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/roadtowizardry/WhereYouAt/model/Item.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/resources/main/db/migration/V1__initital_schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/db/migration/V1__initital_schema.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/db/migration/V2__items_schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/db/migration/V2__items_schema.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/roadtowizardry/WhereYouAt/Container.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/roadtowizardry/WhereYouAt/model/Containers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/roadtowizardry/WhereYouAt/ContainerController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/roadtowizardry/WhereYouAt/ContainerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/roadtowizardry/WhereYouAt/dao/ContainerRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/roadtowizardry/WhereYouAt/controller/ItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/roadtowizardry/WhereYouAt/controller/ItemController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/roadtowizardry/WhereYouAt/dao/ItemRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/roadtowizardry/WhereYouAt/dao/ItemRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/roadtowizardry/WhereYouAt/model/Containers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/roadtowizardry/WhereYouAt/model/Containers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/roadtowizardry/WhereYouAt/model/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/roadtowizardry/WhereYouAt/model/Items.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/db/migration/V1__initital_schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/migration/V1__initital_schema.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/db/migration/V2__items_schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/migration/V2__items_schema.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,9 +64,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="FlywayMigrationScript" />
         <option value="Interface" />
         <option value="Class" />
-        <option value="FlywayMigrationScript" />
       </list>
     </option>
   </component>
@@ -115,6 +122,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="postgresql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -141,6 +149,11 @@
       <workItem from="1640920256994" duration="30000" />
       <workItem from="1640920706513" duration="2808000" />
       <workItem from="1641151579319" duration="4380000" />
+      <workItem from="1641502034773" duration="1508000" />
+      <workItem from="1641515112141" duration="8574000" />
+      <workItem from="1641580197628" duration="95000" />
+      <workItem from="1641580304336" duration="268000" />
+      <workItem from="1641580617478" duration="2975000" />
     </task>
     <task id="LOCAL-00001" summary="initial backend setup&#10;docker-compose working&#10;flyway working">
       <created>1641215244626</created>
