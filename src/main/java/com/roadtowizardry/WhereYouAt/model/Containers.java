@@ -13,11 +13,10 @@ import java.util.Set;
 public class Containers {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    //    private String name;
     private String type;
-//    private String room;
+    private String room;
 //    private String description;
 //    private float height;
 //    private float width;
@@ -30,8 +29,9 @@ public class Containers {
     public Containers() {
     }
 
-    public Containers(String type, Set<Item> items) {
+    public Containers(String type, String room, Set<Item> items) {
         this.type = type;
+        this.room = room;
         this.items = items;
     }
 
@@ -49,6 +49,14 @@ public class Containers {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public String getRoom() {
+        return room;
+    }
+
+    public void setRoom(String room) {
+        this.room = room;
     }
 
     public Set<Item> getItems() {

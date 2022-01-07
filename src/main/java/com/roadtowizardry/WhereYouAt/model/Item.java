@@ -9,10 +9,10 @@ import javax.persistence.*;
 public class Item {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    //    private String category; // clothing, tools [add later, not needed for closet version]
+    private String category; // clothing, tools [add later, not needed for closet version]
     private String type; // shirt, pants
 //    private String occasion; // mil, dress, fancy, workout
 //    private String length; // long sleeve, short
@@ -27,9 +27,11 @@ public class Item {
     public Item() {
     }
 
-    public Item(String type, Containers containers) {
+    public Item(String type, String category, Containers containers) {
         this.type = type;
+        this.category = category;
         this.containers = containers;
+
     }
 
     public long getId() {
@@ -46,6 +48,14 @@ public class Item {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 
     public Containers getContainers() {
